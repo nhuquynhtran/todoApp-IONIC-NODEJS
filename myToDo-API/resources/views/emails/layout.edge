@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <style>
+      /* general */
+      .todo {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #F7F6F3 !important;
+      }
+      .todo h3 {
+        font-size: 20px !important;
+        font-family: Lato, Helvetica, Arial, sans-serif !important;
+        line-height: 27px !important;
+      }
+      .todo h3.capitalize {
+        text-transform: capitalize !important;
+      }
+      .todo p, .todo div, .todo span {
+        font-size: 16px !important;
+        font-family: Lato, Helvetica, Arial, sans-serif !important;
+        color: #000000 !important;
+        line-height: 22px !important;
+      }
+      .todo-hidden {
+        display: none;
+      }
+      .todo-container {
+        position: relative;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        min-width: 320px;
+        max-width: 600px;
+      }
+      .todo-pin {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 15px 0;
+      }
+      .todo-pin pre {
+        display: block !important;
+        height: 60px !important;
+        letter-spacing: 10px !important;
+        font-size: 40px !important;
+        line-height: 60px !important;
+        border-top: 0.5px solid #212121 !important;
+        border-bottom: 0.5px solid #212121 !important;
+        text-align: center !important;
+        background: #eeeeee !important;
+      }
+      .todo-button-group {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .todo-button {
+        position: relative;
+        display: inline-block;
+        width: 180px;
+        margin: 3px 10px;
+        padding: 10px 0;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 24px;
+        text-decoration: none;
+      }
+      .todo-button-black {
+        background: #212121 !important;
+        color: white !important;
+      }
+      .todo-button-grey {
+        background: #dddddd !important;
+        color: #212121 !important;
+      }
+      
+      /* header */
+      #todo-mail-header {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 0;
+        }
+        #todo-mail-header .todo-container {
+          margin-top: 0;
+          margin-bottom: 0;
+          padding: 24px 0;
+          }
+          #todo-logo {
+            position: relative;
+            display: block;
+            height: 46px;
+            width: 121px;
+            margin: 0;
+            padding: 23px 50px;
+            }
+            #todo-logo img {
+              display: block;
+              margin: 0;
+              padding: 0;
+              border: none;
+              outline: none;
+              height: 46px;
+              width: 121px;
+              }
+
+      /* content */
+      #todo-mail-content {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 0;
+        }
+        #todo-mail-content .todo-container {
+          margin-top: 0;
+          margin-bottom: 0;
+          box-shadow: 1px 1px 1px 1px #f0f0f0;
+          }
+          #todo-mail-content .todo-container .todo-outer-border {
+            position: relative;
+            display: block;
+            margin: 0;
+            padding: 50px 0;
+            background: white;
+            border: 10px solid #f2f2f2;
+            }
+            /* top content: menu, banner, etc */
+            #todo-top-content {
+              position: relative;
+              display: block;
+              margin: 0;
+              }
+            /* middle/main content: email content */
+            #todo-middle-content {
+              position: relative;
+              display: block;
+              margin: 0;
+              padding: 0 40px;
+              }
+            /* bottom content: footer */
+            #todo-bottom-content {
+              position: relative;
+              display: block;
+              margin: 0;
+              }
+      /* footer */
+      #todo-mail-footer {
+        position: relative;
+        display: block;
+        height: 110px;
+      }
+      /* responsive */
+      @media (max-width: 480px) {
+        #todo-mail-header .todo-container {
+          padding: 0;
+        }
+        #todo-logo {
+          padding: 23px 10px;
+        }
+        #todo-mail-content .todo-container .todo-outer-border {
+          border: none;
+        }
+        #todo-middle-content {
+          padding: 0 10px;
+        }
+      }
+      
+    </style>
+  </head>
+  <body class="todo">
+    <div class="todo">
+      <header id="todo-mail-header">
+        <div class="todo-container">
+          <a id="todo-logo" href="{{ getConfig('app.appBaseURL') }}" target="_blank">
+            <img src="{{ getConfig('app.publicLogoURL') }}" alt="todo." title="todo." />
+            <span class="todo-hidden brand-name">todo.</span>
+          </a>
+        </div>
+      </header>
+      <div id="todo-mail-content">
+        <div class="todo-container">
+          <div class="todo-outer-border">
+            <div id="todo-middle-content">
+              <div>
+                @!section('content')
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="todo-mail-footer">
+        
+      </div>
+    </div>
+  </body>
+</html>

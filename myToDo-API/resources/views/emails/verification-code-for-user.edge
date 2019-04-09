@@ -1,0 +1,13 @@
+@layout('emails/layout')
+
+@section('content')
+  <div>
+    <h3 class="capitalize">Hi {{user.fullname}},</h3>
+    To complete your forgot password, please enter the code shown below 
+    into the verify code field in the reset password form.
+    If you didn't reset, please ignore this email.
+  </div>
+  <div class="todo-pin">
+    <pre>{{user.verification_code}}</pre>
+  </div>
+@endsection
